@@ -1,245 +1,620 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ran Pan · Resume</title>
-  <meta name="description" content="Resume of Ran Pan — Senior Full‑Stack / Data‑oriented Software Engineer in the DC–MD–VA area (C#, .NET, AWS, Identity, Data)." />
+  <title>Ran Pan · Resume / 简历</title>
+  <meta name="description" content="Bilingual resume page for Ran Pan (EN/中文)." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <meta property="og:title" content="Ran Pan · Resume" />
-  <meta property="og:description" content="Senior Full‑Stack Engineer (C#/.NET, AWS)." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://dummyimage.com/1200x630/000/fff&text=Ran+Pan+Resume" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <meta name="theme-color" content="#0ea5e9" />
   <style>
-    :root{--bg:#0b1020;--bg2:#0e1326;--card:#111732;--ink:#e6e8ee;--muted:#a9b0c7;--pill:#142043;--accent:#38bdf8;--accent2:#22d3ee;--line:#1e2748}
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;color:var(--ink);background:linear-gradient(180deg,var(--bg),var(--bg2));font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans",sans-serif}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 64px}
-    .hero{display:grid;grid-template-columns:1fr;gap:12px;padding:18px;border-radius:20px;background:radial-gradient(1200px 400px at -10% -20%,rgba(56,189,248,.18),transparent),linear-gradient(180deg,rgba(34,211,238,.12),transparent),var(--card);border:1px solid var(--line)}
-    @media(min-width:860px){.hero{grid-template-columns:2.2fr 1fr;align-items:center}}
-    .title{font-weight:800;font-size:clamp(28px,3.2vw,40px);letter-spacing:.2px}
-    .subtitle{color:var(--muted);font-weight:500}
-    .contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
-    .pill{background:var(--pill);border:1px solid var(--line);border-radius:999px;padding:7px 12px;display:inline-flex;gap:8px;align-items:center;color:#d7def5}
-    .grid{display:grid;gap:16px;margin-top:22px}
-    @media(min-width:860px){.grid{grid-template-columns:2fr 1fr}}
-    h2{font-size:18px;letter-spacing:.3px;margin:22px 0 10px}
-    section{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
-    .item{padding:14px 12px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
-    .item + .item{margin-top:12px}
-    .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    .role{font-weight:700}
-    .meta{color:var(--muted)}
-    ul{margin:8px 0 0 20px}
-    li{margin:6px 0}
-    .skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-    @media(min-width:640px){.skills-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.35);color:#d7f3ff;margin:4px 6px 0 0}
-    footer{margin-top:24px;color:var(--muted);text-align:center}
-    .btn{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--accent);color:#001421;background:linear-gradient(180deg,var(--accent),var(--accent2));padding:10px 14px;border-radius:12px;font-weight:700}
-    .btn:hover{text-decoration:none;filter:brightness(1.05)}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-    .small{font-size:12px;color:var(--muted)}
-    /* print */
-    @media print{body{background:white;color:black}section,.hero{background:white;border-color:#ddd}a{color:#0366d6}}
+    :root {
+      --bg: #0b1020;
+      --ink: #e6e8ee;
+      --muted: #a9b0c7;
+      --line: #1e2748;
+      --accent: #38bdf8;
+      --accent2: #22d3ee;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      color: var(--ink);
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+      /* 深蓝—靛青多层渐变 + 轻微动画 */
+      background:
+        radial-gradient(1200px 600px at 18% -12%, rgba(88, 140, 255, .18), transparent 60%),
+        radial-gradient(900px 500px at 82% -14%, rgba(34, 211, 238, .16), transparent 60%),
+        linear-gradient(180deg, #0b1120 0%, #0a0f1f 45%, #0b1020 100%);
+      animation: bgShift 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgShift {
+      from {
+        background-position: 0 0, 0 0, 0 0
+      }
+
+      to {
+        background-position: -80px -40px, 60px -30px, 0 0
+      }
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 16px 40px;
+      backdrop-filter: saturate(110%);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 14px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(120, 180, 255, .16);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .03);
+    }
+
+    @media(min-width:860px) {
+      .hero {
+        grid-template-columns: 2.2fr 1fr;
+        align-items: center
+      }
+    }
+
+    .title {
+      font-weight: 800;
+      font-size: clamp(28px, 3.2vw, 40px);
+      letter-spacing: .2px
+    }
+
+    .subtitle {
+      color: #a8b3cf;
+      font-weight: 500
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(120, 180, 255, .22);
+      color: #d7def5;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06)
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px
+    }
+
+    /* 渐变按钮 */
+    .btn-gradient {
+      --g1: #3b82f6;
+      --g2: #7c3aed;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      color: #eaf2ff;
+      font-weight: 700;
+      letter-spacing: .2px;
+      background: linear-gradient(90deg, var(--g1), var(--g2));
+      border: 1px solid rgba(255, 255, 255, .18);
+      box-shadow: 0 6px 14px rgba(59, 130, 246, .35), inset 0 1px 0 rgba(255, 255, 255, .25);
+      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+    }
+
+    .btn-gradient:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(124, 58, 237, .35), 0 0 0 2px rgba(59, 130, 246, .25) inset, inset 0 1px 0 rgba(255, 255, 255, .35);
+      filter: saturate(115%);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      color: #dbe8ff;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(120, 180, 255, .22);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+      transition: .15s ease;
+    }
+
+    .btn-ghost:hover {
+      border-image: linear-gradient(90deg, #22d3ee, #3b82f6) 1;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .35);
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px
+    }
+
+    @media(min-width:960px) {
+      .grid {
+        grid-template-columns: 1.6fr 1fr
+      }
+    }
+
+    h2 {
+      margin: 16px 0 8px;
+      font-size: 18px;
+      color: #e8efff;
+      letter-spacing: .2px
+    }
+
+    section {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(120, 180, 255, .16);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .03);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .item {
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(56, 189, 248, .18);
+      background: linear-gradient(180deg, rgba(56, 189, 248, .03), rgba(0, 0, 0, .02));
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, .45), 0 0 0 1px rgba(88, 140, 255, .25);
+      border-color: rgba(56, 189, 248, .38);
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .role {
+      font-weight: 700
+    }
+
+    .meta {
+      color: #a8b3cf
+    }
+
+    ul {
+      margin: 6px 0 0 18px
+    }
+
+    li {
+      margin: 4px 0
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 9999px;
+      object-fit: cover;
+      border: 2px solid var(--line);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+      display: block;
+      margin: 0 auto 12px auto;
+    }
+
+    /* 语言切换 */
+    .cn .en-only {
+      display: none
+    }
+
+    .cn .cn-only {
+      display: block
+    }
+
+    .cn-only {
+      display: none
+    }
+
+    /* 右栏吸顶 & reveal 动画 */
+    @media(min-width:960px) {
+      aside {
+        position: sticky;
+        top: 18px;
+        height: max-content
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .5s ease, transform .5s ease
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: none
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black
+      }
+
+      section,
+      .hero {
+        background: white;
+        border-color: #ddd;
+        box-shadow: none
+      }
+
+      a {
+        color: #0366d6
+      }
+    }
   </style>
   <script>
-    function copyEmail(){
-      const e=document.getElementById('email');
-      navigator.clipboard.writeText(e.dataset.mail).then(()=>{
-        const msg=document.getElementById('copied');
-        msg.style.opacity=1;setTimeout(()=>msg.style.opacity=0,1200);
+    function copyEmail() {
+      const e = document.getElementById('email');
+      navigator.clipboard.writeText(e.dataset.mail).then(() => {
+        const msg = document.getElementById('copied');
+        msg.style.opacity = 1; setTimeout(() => msg.style.opacity = 0, 1200);
       });
     }
-    function toggleChinese(){
+    function toggleChinese() {
       document.body.classList.toggle('cn');
+      const lang = document.body.classList.contains('cn') ? 'zh' : 'en';
+      localStorage.setItem('resume_lang', lang);
     }
-  </script>
-  <style>
-    .cn .en-only{display:none}
-    .cn .cn-only{display:unset}
-    .cn-only{display:none}
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Ran Pan",
-    "email":"mailto:panpanr@gmail.com",
-    "telephone":"+1-301-640-1486",
-    "jobTitle":"Senior Full‑Stack Software Engineer",
-    "address":{"@type":"PostalAddress","addressLocality":"Rockville/Potomac","addressRegion":"MD","postalCode":"20854","addressCountry":"US"},
-    "url":"",
-    "sameAs":[]
-  }
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('resume_lang'); if (saved === 'zh') { document.body.classList.add('cn'); }
+      const els = [...document.querySelectorAll('.item, section, .hero')];
+      const io = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); } }); }, { threshold: .08 });
+      els.forEach(el => { el.classList.add('reveal'); io.observe(el); });
+    });
   </script>
 </head>
+
 <body>
   <div class="wrap">
     <header class="hero">
       <div>
         <div class="title">Ran Pan</div>
-        <div class="subtitle en-only">Senior Full‑Stack / Data‑oriented Software Engineer · C#/.NET · AWS · Identity</div>
-        <div class="subtitle cn-only">高级全栈/数据向工程师 · C#/.NET · AWS · 身份与安全</div>
+        <div class="subtitle en-only">Senior Full-Stack / Data-oriented Software Engineer · C#/.NET · AWS · Identity
+        </div>
+        <div class="subtitle cn-only">高级全栈 / 数据向工程师 · C#/.NET · AWS · 身份与安全</div>
         <div class="contact">
-          <span class="pill" id="email" data-mail="panpanr@gmail.com" title="Click to copy" onclick="copyEmail()">📧 panpanr@gmail.com</span>
-          <span class="pill">📞 (301) 640‑1486</span>
-          <span class="pill">📍 Rockville/Potomac, MD</span>
+          <span class="pill" id="email" data-mail="panpanr@gmail.com" onclick="copyEmail()">📧 panpanr@gmail.com</span>
+          <span class="pill">📞 (301) 640-1486</span>
+          <span class="pill">📍 Rockville/Potomac, MD 20854</span>
         </div>
         <div class="actions">
-          <a class="btn" href="#" onclick="alert('Add your PDF file to the same folder and update the link in the HTML.'); return false;">Download PDF</a>
-          <a class="pill" href="#projects">View Work</a>
-          <button class="pill" onclick="toggleChinese()">中文/EN</button>
-          <span id="copied" class="small" style="opacity:0;transition:opacity .2s;">Email copied ✓</span>
+          <button class="btn-ghost" onclick="toggleChinese()">中文 / EN</button>
+          <a class="btn-gradient" href="#projects">Projects / 项目</a>
+          <span id="copied" class="meta" style="opacity:0;transition:opacity .2s;">Copied ✓</span>
         </div>
       </div>
       <div>
+        <img src="headshot.jpg" alt="Ran Pan headshot" class="avatar" />
         <div class="item">
-          <div class="role">Professional Summary</div>
-          <p class="meta en-only">15+ years building secure, data‑heavy web systems (healthcare, identity, enterprise). Deep C#/.NET and SQL pedigree; shipper of REST APIs, MFA/passkeys modules, and AWS‑hosted apps. Comfortable across backend, front‑end (Angular), and data pipelines.</p>
-          <p class="meta cn-only">15年以上大体量数据与安全场景的企业级系统经验（医疗、身份）。精通 C#/.NET 与 SQL，长期交付 REST API、MFA/Passkey 模块与基于 AWS 的应用；前后端（Angular）与数据流程均可覆盖。</p>
+          <div class="role en-only">Professional Summary</div>
+          <div class="role cn-only">个人简介</div>
+          <p class="meta en-only">15+ years building secure, data-heavy web systems (healthcare, identity, enterprise).
+            Deep C#/.NET and SQL background; shipper of REST APIs, MFA/passkeys modules, and AWS-hosted apps.
+            Comfortable across backend, front-end (Angular), and data pipelines.</p>
+          <p class="meta cn-only">15 年以上企业级安全与大数据量 Web 系统经验（医疗、身份认证等）。精通 C#/.NET 与 SQL，长期交付 REST API、MFA/通行密钥模块与基于 AWS
+            的应用；后端、前端（Angular）与数据流程均可覆盖。</p>
         </div>
       </div>
     </header>
 
     <div class="grid">
       <section id="experience">
-        <h2>Experience</h2>
+        <h2 class="en-only">Experience</h2>
+        <h2 class="cn-only">工作经历</h2>
+
         <div class="item">
           <div class="row">
-            <div class="role">FEI Systems — Full Stack Software Engineer</div>
-            <div class="meta">Apr 2025 – Present · Columbia, MD</div>
+            <div class="role">FEI Systems — Columbia, MD</div>
+            <div class="meta en-only">Apr 2025 – Present</div>
+            <div class="meta cn-only">2025.4 – 至今</div>
           </div>
-          <ul>
-            <li>Rebuilt LTSS modules from Agatha to REST, and migrated workloads to AWS EC2.</li>
-            <li>Integrated GitHub Copilot and ChatGPT into the engineering workflow.</li>
+          <div class="meta en-only"><strong>Full Stack Software Engineer</strong></div>
+          <div class="meta cn-only"><strong>全栈软件工程师</strong></div>
+          <ul class="en-only">
+            <li>Developed LTSS project; rebuilt from Agatha Lib to RESTful API; migrated workloads to AWS EC2.</li>
+            <li>Integrated GitHub Copilot and ChatGPT into workflow.</li>
             <li><span class="meta">Stack: AWS, Azure DevOps, C#, Python, Angular 15, SQL Server, .NET Core</span></li>
           </ul>
-        </div>
-        <div class="item">
-          <div class="row">
-            <div class="role">FEI Systems — Senior Software Engineer</div>
-            <div class="meta">Aug 2019 – Mar 2025 · Columbia, MD</div>
-          </div>
-          <ul>
-            <li>Led WITS behavioral‑health platform used across 35 U.S. states.</li>
-            <li>Modernized integrations from WCF to REST; built 837/835 & CCDA processors.</li>
-            <li>Authored Identity module with MFA, passkeys, and secure healthcare access.</li>
-            <li><span class="meta">Stack: AWS, Azure DevOps, C#, Python, NHibernate, Dapper, AngularJS, SQL Server, ElasticSearch</span></li>
+          <ul class="cn-only">
+            <li>开发 LTSS 项目；将系统从 Agatha 库重构为 RESTful API，并迁移至 AWS EC2。</li>
+            <li>将 GitHub Copilot 与 ChatGPT 融入工程流程。</li>
+            <li><span class="meta">技术栈：AWS、Azure DevOps、C#、Python、Angular 15、SQL Server、.NET Core</span></li>
           </ul>
         </div>
+
         <div class="item">
           <div class="row">
-            <div class="role">Essential Software Inc / National Cancer Institute — Senior Software Engineer</div>
-            <div class="meta">Apr 2018 – Aug 2019 · Rockville, MD</div>
+            <div class="role">FEI Systems — Columbia, MD</div>
+            <div class="meta en-only">Aug 2019 – Mar 2025</div>
+            <div class="meta cn-only">2019.8 – 2025.3</div>
           </div>
-          <ul>
-            <li>Designed and migrated CTRO Reporting System (.NET, WebAPI, Azure; dashboards & batch).</li>
-            <li>Upgraded to .NET Core + Angular; moved DB to Azure SQL; media to Blob; CI/CD to Azure.</li>
+          <div class="meta en-only"><strong>Senior Software Engineer</strong></div>
+          <div class="meta cn-only"><strong>高级软件工程师</strong></div>
+          <ul class="en-only">
+            <li>Led WITS behavioral-health platform across 35 US states.</li>
+            <li>Migrated integrations from WCF to RESTful API; developed 837/835 & CCDA processors.</li>
+            <li>Built WITS Identity module (MFA, passkeys, secure healthcare access).</li>
+            <li><span class="meta">Stack: AWS, Azure DevOps, C#, Python, NHibernate, Dapper, AngularJS, SQL Server,
+                ElasticSearch</span></li>
+          </ul>
+          <ul class="cn-only">
+            <li>主导 WITS 行为健康平台，覆盖 35 个州。</li>
+            <li>将集成从 WCF 升级为 RESTful API；开发 837/835 与 CCDA 处理器。</li>
+            <li>构建 WITS 身份模块（MFA、通行密钥、安全医疗访问）。</li>
+            <li><span class="meta">技术栈：AWS、Azure DevOps、C#、Python、NHibernate、Dapper、AngularJS、SQL
+                Server、ElasticSearch</span></li>
           </ul>
         </div>
+
         <div class="item">
           <div class="row">
-            <div class="role">comScore — Senior Mobile Engineer</div>
-            <div class="meta">Oct 2017 – Apr 2018 · Reston, VA</div>
+            <div class="role">Essential Software Inc / National Cancer Institute — Rockville, MD</div>
+            <div class="meta en-only">Apr 2018 – Aug 2019</div>
+            <div class="meta cn-only">2018.4 – 2019.8</div>
           </div>
-          <ul>
-            <li>Developed MobileExpression & UltraWallpaper; registration email module.</li>
-            <li><span class="meta">Tech: ASP.NET, SQL Server, Java, Kotlin, Firebase, Realm, OpenGL</span></li>
+          <div class="meta en-only"><strong>Senior Software Engineer</strong></div>
+          <div class="meta cn-only"><strong>高级软件工程师</strong></div>
+          <ul class="en-only">
+            <li>Designed & migrated CTRO Reporting System (C#, MVC, WebAPI, Azure); delivered REST APIs, batch
+              automation, dashboards.</li>
+            <li>Migrated Pesticide Risk Assessment Application (VBA).</li>
+            <li>Upgraded to .NET Core + Angular; DB to Azure SQL; media to Blob; CI/CD to Azure.</li>
+          </ul>
+          <ul class="cn-only">
+            <li>设计并迁移 CTRO 报告系统（C#、MVC、WebAPI、Azure）；交付 REST API、批处理自动化与仪表盘。</li>
+            <li>迁移农药风险评估应用（VBA）。</li>
+            <li>升级至 .NET Core + Angular；数据库迁移到 Azure SQL；媒体转存 Blob；CI/CD 上 Azure。</li>
           </ul>
         </div>
+
         <div class="item">
           <div class="row">
-            <div class="role">Asclepius Solutions / National Cancer Institute — Database/Software Developer</div>
-            <div class="meta">Nov 2015 – Oct 2017 · Bethesda, MD</div>
+            <div class="role">comScore — Reston, VA</div>
+            <div class="meta en-only">Oct 2017 – Apr 2018</div>
+            <div class="meta cn-only">2017.10 – 2018.4</div>
           </div>
-          <ul>
-            <li>Designed/maintained clinical DBs; PL/SQL procs, triggers; scheduled ETL; schema design.</li>
-            <li><span class="meta">Tech: Oracle Clinical, J‑Review, PL/SQL, Angular 2+, C#, WPF, WCF</span></li>
+          <div class="meta en-only"><strong>Senior Mobile Engineer</strong></div>
+          <div class="meta cn-only"><strong>高级移动工程师</strong></div>
+          <ul class="en-only">
+            <li>Developed MobileExpression & UltraWallpaper; registration email module; Java/Kotlin, Firebase, OpenGL.
+            </li>
+            <li><span class="meta">Tech: ASP.NET, SQL Server, Java, Kotlin, XML/XSLT, Firebase, Realm</span></li>
+          </ul>
+          <ul class="cn-only">
+            <li>开发 MobileExpression 与 UltraWallpaper；实现注册邮件模块；涉及 Java/Kotlin、Firebase、OpenGL。</li>
+            <li><span class="meta">技术：ASP.NET、SQL Server、Java、Kotlin、XML/XSLT、Firebase、Realm</span></li>
           </ul>
         </div>
+
         <div class="item">
           <div class="row">
-            <div class="role">H2OClinical — Database Administrator</div>
-            <div class="meta">Jul 2014 – Nov 2015 · Baltimore, MD</div>
+            <div class="role">Asclepius Solutions / National Cancer Institute — Bethesda, MD</div>
+            <div class="meta en-only">Nov 2015 – Oct 2017</div>
+            <div class="meta cn-only">2015.11 – 2017.10</div>
           </div>
-          <ul>
-            <li>Built clinical data warehouses; PL/SQL & C# extensions; SAS listings for edit‑checks.</li>
+          <div class="meta en-only"><strong>Database / Software Developer</strong></div>
+          <div class="meta cn-only"><strong>数据库 / 软件开发工程师</strong></div>
+          <ul class="en-only">
+            <li>Designed & maintained clinical DBs; PL/SQL stored procedures & triggers; scheduled ETL; schema from SME
+              Excel to Oracle Clinical.</li>
+            <li><span class="meta">Skills: Oracle Clinical, J-Review, PL/SQL, Angular 2+, C#, WPF, WCF</span></li>
+          </ul>
+          <ul class="cn-only">
+            <li>设计维护临床数据库；编写 PL/SQL 存储过程与触发器；调度 ETL；将 SME Excel 数据建模到 Oracle Clinical。</li>
+            <li><span class="meta">技能：Oracle Clinical、J-Review、PL/SQL、Angular 2+、C#、WPF、WCF</span></li>
           </ul>
         </div>
+
         <div class="item">
           <div class="row">
-            <div class="role">University of Missouri — Software Developer</div>
-            <div class="meta">Mar 2013 – Jul 2014 · Columbia, MO</div>
+            <div class="role">H2OClinical — Baltimore, MD</div>
+            <div class="meta en-only">Jul 2014 – Nov 2015</div>
+            <div class="meta cn-only">2014.7 – 2015.11</div>
           </div>
-          <ul>
-            <li>Course & appointment web apps with ASP.NET/C#/SQL Server; dynamic controls.</li>
+          <div class="meta en-only"><strong>Database Administrator</strong></div>
+          <div class="meta cn-only"><strong>数据库管理员</strong></div>
+          <ul class="en-only">
+            <li>Built clinical data warehouses; PL/SQL & C# extensions; SAS edit-check listings.</li>
+            <li><span class="meta">Skills: SAS, Oracle Clinical (PL/SQL), Medrio, Medidata (C#)</span></li>
+          </ul>
+          <ul class="cn-only">
+            <li>构建临床数据仓库；开发 PL/SQL 与 C# 扩展；编写 SAS 稽核清单。</li>
+            <li><span class="meta">技能：SAS、Oracle Clinical (PL/SQL)、Medrio、Medidata (C#)</span></li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="row">
+            <div class="role">Application Development Network – University of Missouri — Columbia, MO</div>
+            <div class="meta en-only">Mar 2013 – Jul 2014</div>
+            <div class="meta cn-only">2013.3 – 2014.7</div>
+          </div>
+          <div class="meta en-only"><strong>Software Developer</strong></div>
+          <div class="meta cn-only"><strong>软件开发工程师</strong></div>
+          <ul class="en-only">
+            <li>Developed course / appointment web apps with ASP.NET, C#, SQL Server; dynamic user controls & master
+              pages.</li>
+            <li><span class="meta">Skills: ASP.NET, C#, SQL Server</span></li>
+          </ul>
+          <ul class="cn-only">
+            <li>开发课程与预约类 Web 应用（ASP.NET、C#、SQL Server）；实现动态控件与母版页。</li>
+            <li><span class="meta">技能：ASP.NET、C#、SQL Server</span></li>
           </ul>
         </div>
       </section>
 
       <aside>
         <section id="skills">
-          <h2>Skills</h2>
-          <div class="skills-grid">
-            <div class="item">
-              <div class="role">Languages/Frameworks</div>
-              <p class="meta">C# (.NET, MVC, WPF, WCF, EF, LINQ), Java/Kotlin, Python, C++, SQL (PL/SQL, T‑SQL), JS/TS (Angular), HTML/CSS, SAS, MATLAB</p>
-            </div>
-            <div class="item">
-              <div class="role">Cloud & Data</div>
-              <p class="meta">AWS, Azure, SQL Server, Oracle, PostgreSQL, SQLite, Firebase, Realm, ElasticSearch</p>
-            </div>
-            <div class="item">
-              <div class="role">Practices & Tools</div>
-              <p class="meta">REST, Microservices, TDD, Agile/Scrum, Git/Azure DevOps/Jira, Postman, Fiddler</p>
-            </div>
+          <h2 class="en-only">Skills & Knowledge</h2>
+          <h2 class="cn-only">技能与知识</h2>
+          <div class="item">
+            <div class="role en-only">Languages / Frameworks</div>
+            <div class="role cn-only">编程语言 / 框架</div>
+            <p class="meta en-only">C# (ASP.NET, MVC, WPF, WCF, EF, LINQ), Java, SQL (PL/SQL, T-SQL), SAS, Kotlin,
+              MATLAB, Python, C++ (OpenCV), JavaScript/CSS, HTML, TypeScript (Angular)</p>
+            <p class="meta cn-only">
+              C#（ASP.NET、MVC、WPF、WCF、EF、LINQ）、Java、SQL（PL/SQL、T-SQL）、SAS、Kotlin、MATLAB、Python、C++（OpenCV）、JavaScript/CSS、HTML、TypeScript（Angular）
+            </p>
+          </div>
+          <div class="item">
+            <div class="role en-only">IDE</div>
+            <div class="role cn-only">开发工具</div>
+            <p class="meta en-only">Visual Studio, Android Studio, PyCharm, Eclipse, Keil</p>
+            <p class="meta cn-only">Visual Studio、Android Studio、PyCharm、Eclipse、Keil</p>
+          </div>
+          <div class="item">
+            <div class="role en-only">Cloud</div>
+            <div class="role cn-only">云平台</div>
+            <p class="meta en-only">AWS, Azure, Cloudinary</p>
+            <p class="meta cn-only">AWS、Azure、Cloudinary</p>
+          </div>
+          <div class="item">
+            <div class="role en-only">Databases</div>
+            <div class="role cn-only">数据库</div>
+            <p class="meta en-only">Oracle, SQL Server, PostgreSQL, SQLite, Firebase, Realm</p>
+            <p class="meta cn-only">Oracle、SQL Server、PostgreSQL、SQLite、Firebase、Realm</p>
+          </div>
+          <div class="item">
+            <div class="role en-only">Software Engineering</div>
+            <div class="role cn-only">软件工程</div>
+            <p class="meta en-only">3-Tier, MVC, Microservices, TDD, Agile (Scrum), Waterfall</p>
+            <p class="meta cn-only">三层架构、MVC、微服务、TDD、敏捷（Scrum）、瀑布模型</p>
+          </div>
+          <div class="item">
+            <div class="role en-only">Tools</div>
+            <div class="role cn-only">工具</div>
+            <p class="meta en-only">TFS, Git, Visual SVN, Trello, Jira, SourceTree, Azure DevOps, Postman, Fiddler</p>
+            <p class="meta cn-only">TFS、Git、Visual SVN、Trello、Jira、SourceTree、Azure DevOps、Postman、Fiddler</p>
+          </div>
+          <div class="item">
+            <div class="role en-only">EDC</div>
+            <div class="role cn-only">EDC</div>
+            <p class="meta en-only">Oracle Clinical, Medidata, Medrio, Inform</p>
+            <p class="meta cn-only">Oracle Clinical、Medidata、Medrio、Inform</p>
+          </div>
+          <div class="item">
+            <div class="role en-only">Courses & Knowledge</div>
+            <div class="role cn-only">课程与知识</div>
+            <p class="meta en-only">image processing, machine learning, algorithms, data mining, microcomputer
+              principles, circuits, control theory</p>
+            <p class="meta cn-only">图像处理、机器学习、算法、数据挖掘、微机原理、电路、自动控制理论</p>
           </div>
         </section>
 
         <section id="education">
-          <h2>Education</h2>
+          <h2 class="en-only">Education</h2>
+          <h2 class="cn-only">教育背景</h2>
           <div class="item">
-            <div class="role">MSc, Computer Engineering — University of Missouri</div>
-            <div class="meta">GPA 3.71 · Full scholarship · GRA</div>
-            <div class="small">Thesis: EM‑based face verification (Image Processing, ML)</div>
+            <div class="role en-only">MSc, Computer Engineering — University of Missouri, Columbia, MO</div>
+            <div class="role cn-only">计算机工程硕士 — 密苏里大学（哥伦比亚）</div>
+            <div class="meta en-only">GPA 3.71 · Full scholarship · Graduate Research Assistant</div>
+            <div class="meta cn-only">GPA 3.71 · 全额奖学金 · 研究助理</div>
+            <div class="meta en-only">Thesis: EM-based face verification (Image Processing, ML, Data Mining)</div>
+            <div class="meta cn-only">论文：基于 EM 的人脸验证（图像处理、机器学习、数据挖掘）</div>
           </div>
           <div class="item">
-            <div class="role">MSc & BSc, Control Engineering & Instrument — USTB</div>
-            <div class="small">Thesis: Algorithms for human detection & tracking in video; BSc Project: Fingerprint lock (C, circuits)</div>
+            <div class="role en-only">MSc, Control Engineering & Instrument — USTB, Beijing</div>
+            <div class="role cn-only">控制工程与仪器硕士 — 北京科技大学</div>
+            <div class="meta en-only">Full scholarship · Excellent Graduate Student</div>
+            <div class="meta cn-only">全额奖学金 · 优秀毕业生</div>
+            <div class="meta en-only">Thesis: Detection & tracking of human objects in video surveillance</div>
+            <div class="meta cn-only">论文：视频监控中人体目标检测与跟踪</div>
+          </div>
+          <div class="item">
+            <div class="role en-only">BSc, Control Engineering & Instrument — USTB, Beijing</div>
+            <div class="role cn-only">控制工程与仪器学士 — 北京科技大学</div>
+            <div class="meta en-only">Graduation Project: Fingerprint Lock Design (MCU, C, circuits)</div>
+            <div class="meta cn-only">毕业设计：指纹锁设计（单片机、C 语言、电路）</div>
           </div>
         </section>
 
         <section id="certs">
-          <h2>Certifications</h2>
-          <span class="badge">AWS SAA</span>
-          <span class="badge">MCSD</span>
-          <span class="badge">CSM</span>
-          <span class="badge">SAFe 5 Practitioner</span>
-          <span class="badge">Oracle SQL Expert</span>
+          <h2 class="en-only">Certifications</h2>
+          <h2 class="cn-only">证书</h2>
+          <span class="pill">AWS SAA</span>
+          <span class="pill">MCSD</span>
+          <span class="pill">CSM</span>
+          <span class="pill">SAFe 5 Practitioner</span>
+          <span class="pill">Oracle SQL Expert</span>
         </section>
       </aside>
     </div>
 
     <section id="projects" style="margin-top:16px;">
-      <h2>Projects & Public Work</h2>
+      <h2 class="en-only">Projects & Public Work</h2>
+      <h2 class="cn-only">项目与公开作品</h2>
       <div class="item">
-        <div class="row"><div class="role">WITS Public Portal</div><div class="meta"><a href="https://pa.witsweb.org/Public/" target="_blank" rel="noopener">pa.witsweb.org/Public</a></div></div>
+        <div class="row">
+          <div class="role">WITS Public Portal</div>
+          <div class="meta"><a href="https://pa.witsweb.org/Public/" target="_blank"
+              rel="noopener">pa.witsweb.org/Public</a></div>
+        </div>
       </div>
       <div class="item">
-        <div class="row"><div class="role">Maryland LTSS Portal</div><div class="meta"><a href="https://ltss.health.maryland.gov/ltssv2/Ltss.Web" target="_blank" rel="noopener">ltss.health.maryland.gov</a></div></div>
+        <div class="row">
+          <div class="role">Maryland LTSS Portal</div>
+          <div class="meta"><a href="https://ltss.health.maryland.gov/ltssv2/Ltss.Web" target="_blank"
+              rel="noopener">ltss.health.maryland.gov</a></div>
+        </div>
       </div>
     </section>
 
-    <footer>
-      © <span id="year"></span> Ran Pan · Built with vanilla HTML/CSS.
+    <footer style="text-align:center;color:#a8b3cf;margin-top:22px">
+      © <span id="year"></span> Ran Pan · Resume (EN/中文).
+      <span class="en-only">Press</span><span class="cn-only">点击</span> <strong>中文 / EN</strong>
+      <span class="en-only">to switch language.</span><span class="cn-only">切换语言。</span>
     </footer>
   </div>
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
 </body>
+
 </html>
