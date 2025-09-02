@@ -280,6 +280,15 @@
         color: #0366d6
       }
     }
+
+    .section-title {
+      padding-left: 16px;
+      /* 调到与卡片内容左边对齐 */
+      margin-top: 24px;
+      /* 可选：和上方卡片拉开一点 */
+      margin-bottom: 12px;
+      /* 可选：和下面卡片距离一致 */
+    }
   </style>
   <script>
     function copyEmail() {
@@ -318,7 +327,10 @@
           <span class="pill" id="email" data-mail="panpanr@gmail.com" title="Click to copy / 点击复制"
             onclick="copyEmail()">📧 panpanr@gmail.com</span>
           <a class="pill" href="tel:+13016401486">📞 (301) 640-1486</a>
-          <a class="pill" href="geo:0,0?q=Rockville/Potomac, MD 20854">📍 Rockville/Potomac, MD 20854</a>
+          <a class="pill" href="https://www.google.com/maps/search/?api=1&query=Rockville%2FPotomac%2C%20MD%2020854"
+            target="_blank" rel="noopener">
+            📍 Rockville/Potomac, MD 20854
+          </a>
         </div>
         <div class="actions">
           <button class="btn-gradient" onclick="toggleChinese()">中文 / EN</button>
@@ -342,8 +354,8 @@
 
     <div class="grid">
       <section id="experience">
-        <h2 class="en-only">Experience</h2>
-        <h2 class="cn-only">工作经历</h2>
+        <h2 class="en-only section-title">Experience</h2>
+        <h2 class="cn-only section-title">工作经历</h2>
 
         <div class="item">
           <div class="row">
@@ -488,8 +500,8 @@
 
       <aside>
         <section id="skills">
-          <h2 class="en-only">Skills & Knowledge</h2>
-          <h2 class="cn-only">技能与知识</h2>
+          <h2 class="en-only section-title">Skills & Knowledge</h2>
+          <h2 class="cn-only section-title">技能与知识</h2>
           <div class="item">
             <div class="role en-only">Languages / Frameworks</div>
             <div class="role cn-only">编程语言 / 框架</div>
@@ -547,8 +559,8 @@
         </section>
 
         <section id="education">
-          <h2 class="en-only">Education</h2>
-          <h2 class="cn-only">教育背景</h2>
+          <h2 class="en-only section-title">Education</h2>
+          <h2 class="cn-only section-title">教育背景</h2>
           <div class="item">
             <div class="role en-only">MSc, Computer Engineering — University of Missouri, Columbia, MO</div>
             <div class="role cn-only">计算机工程硕士 — 密苏里大学（哥伦比亚）</div>
@@ -574,8 +586,8 @@
         </section>
 
         <section id="certs">
-          <h2 class="en-only">Certifications</h2>
-          <h2 class="cn-only">证书</h2>
+          <h2 class="en-only section-title">Certifications</h2>
+          <h2 class="cn-only section-title">证书</h2>
           <span class="pill">AWS SAA</span>
           <span class="pill">MCSD</span>
           <span class="pill">CSM</span>
@@ -586,8 +598,8 @@
     </div>
 
     <section id="projects" style="margin-top:16px;">
-      <h2 class="en-only">Projects & Public Work</h2>
-      <h2 class="cn-only">项目与公开作品</h2>
+      <h2 class="en-only section-title">Projects & Public Work</h2>
+      <h2 class="cn-only section-title">项目与公开作品</h2>
       <div class="item">
         <div class="row">
           <div class="role">WITS Public Portal</div>
