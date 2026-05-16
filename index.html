@@ -227,11 +227,15 @@
       <div class="side-title">Skills</div>
       <div class="chips"><span class="chip">C# / .NET</span>
         <span class="chip">Python</span>
-        <span class="chip">Kotlin</span>
-        <span class="chip">Java</span>
+        <span class="chip">Orleans</span>
+        <span class="chip">CMMN</span>
+        <span class="chip">Distributed Systems</span>
         <span class="chip">SQL (PL/SQL, T-SQL)</span>
         <span class="chip">Angular</span>
         <span class="chip">REST APIs</span>
+        <span class="chip">ASP.NET Core</span>
+        <span class="chip">MediatR</span>
+        <span class="chip">FluentValidation</span>
         <span class="chip">AWS</span>
         <span class="chip">Azure</span>
         <span class="chip">MongoDB</span>
@@ -267,14 +271,14 @@
 
     <main class="main">
       <div class="name">Ran Pan</div>
-      <div class="role">Full Stack Software Engineer - AI</div>
+      <div class="role">Senior Backend Engineer - Distributed Workflow Systems</div>
       <div class="rule"></div>
 
       <section class="section">
         <h2>Profile</h2>
         <div class="summary">
-          Full-stack engineer with deep experience delivering secure, data-heavy web applications in healthcare and enterprise domains.
-          Recently focused on AI-powered OCR and document intelligence for LTSS Plan of Service (POS) workflows, including LLM-orchestrated extraction/validation pipelines and auditable, human-in-the-loop approvals.
+          Senior backend engineer with deep experience delivering secure, data-heavy platforms across healthcare and enterprise domains.
+          Recently focused on distributed workflow architecture, CMMN-aligned case lifecycle design, Orleans grain-based orchestration, and ASP.NET Core command APIs for complex case management systems.
         </div>
       </section>
 
@@ -284,19 +288,16 @@
         <div class="exp-item">
           <div class="row">
             <div>
-              <div class="org">FEI Systems</div>
-              <div class="where">Columbia, MD</div>
+              <div class="org">Securiport, LLC</div>
+              <div class="where">Reston, VA</div>
             </div>
-            <div class="when">2025.4 — Now</div>
+            <div class="when">2026.4 — Now</div>
           </div>
-          <div class="titleline">Full Stack Software Engineer - AI</div>
+          <div class="titleline">Senior AI Engineer</div>
           <ul class="bullets">
-            <li>Led an internal AI-powered OCR and document intelligence platform for LTSS Plan of Service (POS) workflows.</li>
-            <li>Built LLM-orchestrated extraction and validation pipelines using FastAPI, LangGraph, Redis, and MongoDB.</li>
-            <li>Persisted structured POS data and LLM workflow state in MongoDB to support traceable, auditable, human-in-the-loop approvals.</li>
-            <li>Developed LTSS project; rebuilt from Agatha Lib to RESTful API, migrated workloads to AWS EC2.</li>
-            <li>Integrated GitHub Copilot and ChatGPT into workflow.</li>
-            <li class="muted">Skills: AWS, Azure DevOps, C#, Python, Angular 20, SQL Server, .NET Core</li>
+            <li>Designed the overall Orleans grain architecture for workflow execution, defining grain boundaries, lifecycle responsibilities, and service interactions across workflow host, command API, and projection worker services.</li>
+            <li>Established reusable workflow engine patterns for state transitions, workflow definitions, and distributed orchestration, providing a foundation for CMMN-style human-task and case-management scenarios.</li>
+            <li class="muted">Skills: C#, .NET, ASP.NET Core, Orleans, CMMN, MediatR, Github copilot, MCP, AWS, Redis, MongoDB, SQL Server, Azure DevOps, Docker</li>
           </ul>
         </div>
 
@@ -306,15 +307,15 @@
               <div class="org">FEI Systems</div>
               <div class="where">Columbia, MD</div>
             </div>
-            <div class="when">2019.8 — 2025.3</div>
+            <div class="when">2019.8 — 2026.4</div>
           </div>
-          <div class="titleline">Senior Software Engineer</div>
+          <div class="titleline">Full Stack Software Engineer</div>
           <ul class="bullets">
-            <li>Led development of WITS behavioral health system across 35 US states.</li>
-			<li>Architected an automated AI data pipeline to ingest healthcare JSON data into Snowflake Internal Stages; utilized Snowpipe and Streams to trigger asynchronous Cortex AI tasks for Llama3-70b based PII redaction and e5-base-v2 vector embeddings.</li>
-            <li>Upgraded Gainabs integration from WCF to RESTful API; developed 837/835, CCDA and FHIR processors.</li>
-            <li>Built WITS Identity module for MFA, passkeys, and secure healthcare access.</li>
-            <li class="muted">Skills: AWS, Azure DevOps, C#, Python, NHibernate, Dapper, AngularJS, SQL Server, ElasticSearch, Azure Cosmos</li>
+            <li>Led an internal OCR + document intelligence platform for LTSS Plan of Service (POS) workflows, reducing manual abstraction time by 91% and improving first-pass data quality by 5%.</li>
+			<li>Built an LLM-orchestrated extraction and validation pipeline using FastAPI + LangGraph, with async job execution via Redis/ARQ and persistence in MongoDB for scalable, non-blocking document processing.</li>
+            <li>Delivered interoperability export by generating FHIR R4 transaction Bundles and optional push to R4-compliant endpoints; surfaced EHR links in the UI to shorten downstream triage.</li>
+            <li>Architected an automated AI data pipeline to ingest healthcare JSON data into Snowflake Internal Stages; utilized Snowpipe and Streams to trigger asynchronous Cortex AI tasks for Llama3-70b based PII redaction and e5-base-v2 vector embeddings.</li>
+            <li class="muted">Skills: AWS, Azure DevOps, C#, Python, NHibernate, Dapper, Angular, SQL Server, ElasticSearch, Azure Cosmos</li>
           </ul>
         </div>
 
