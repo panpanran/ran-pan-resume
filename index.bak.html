@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ran Pan — Portfolio & Resume</title>
+  <title>Ran Pan — Resume</title>
   <style>
     :root{
       --ink:#0f172a;
@@ -13,88 +13,19 @@
       --sidebar:#334155;
       --sidebar-deep:#0f172a;
       --accent:#2563eb;
-      --nav-bg: rgba(255, 255, 255, 0.85);
     }
     *{ box-sizing:border-box; }
     html,body{ height:100%; }
     body{
       margin:0;
-      padding-top: 60px; /* Space for fixed navbar */
       background:#f1f5f9;
       color:var(--ink);
       font-family: system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans","PingFang SC","Microsoft YaHei",sans-serif;
     }
 
-    /* --- Top Navbar Styling --- */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 60px;
-      background: var(--nav-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    .nav-container {
-      width: min(980px, calc(100vw - 24px));
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 8px;
-    }
-    .nav-brand {
-      font-weight: 850;
-      font-size: 16px;
-      color: var(--ink);
-      text-decoration: none;
-      letter-spacing: -0.01em;
-      cursor: pointer;
-    }
-    .nav-menu {
-      display: flex;
-      gap: 6px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .nav-link {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--muted);
-      text-decoration: none;
-      padding: 6px 14px;
-      border-radius: 8px;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-    .nav-link:hover {
-      color: var(--accent);
-      background: rgba(37, 99, 235, 0.05);
-    }
-    .nav-link.active {
-      color: #ffffff;
-      background: var(--accent);
-    }
-
-    /* --- View Views Control --- */
-    .view-content {
-      display: none;
-    }
-    .view-content.active-view {
-      display: block;
-    }
-
-    /* --- Resume Page Layout --- */
     .page{
       width:min(980px, calc(100vw - 24px));
-      margin:18px auto 36px;
+      margin:18px auto;
       background:var(--paper);
       box-shadow: 0 18px 50px rgba(2,6,23,.12);
       border-radius:14px;
@@ -110,6 +41,7 @@
       padding:26px 22px;
     }
 
+    /* Headshot area (top-left) */
     .photo{
       width:128px;
       height:128px;
@@ -234,512 +166,243 @@
       border-top:1px solid var(--line);
     }
     .edu-item:first-of-type{ border-top:none; padding-top:0; }
+
     .sub{ margin-top:6px; font-size:14px; line-height:1.5; }
-
-    /* --- Project Page / Markdown Document Styling --- */
-    .project-container {
-      width: min(980px, calc(100vw - 24px));
-      margin: 24px auto 48px;
-      background: var(--paper);
-      box-shadow: 0 18px 50px rgba(2,6,23,.12);
-      border-radius: 14px;
-      padding: 40px 45px;
-    }
-    .preview-box {
-      width: 100%;
-      background: #f8fafc;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 36px;
-      box-shadow: inset 0 2px 8px rgba(0,0,0,0.02);
-    }
-    .preview-img {
-      width: 100%;
-      height: auto;
-      max-height: 480px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-    }
-    .preview-placeholder {
-      height: 260px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: var(--muted);
-      gap: 8px;
-    }
-
-    /* GitHub Markdown Look & Feel */
-    .markdown-body {
-      font-size: 15px;
-      line-height: 1.65;
-      color: #24292e;
-    }
-    .markdown-body h1 { font-size: 28px; font-weight: 800; margin-top: 0; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); color: #0f172a; }
-    .markdown-body h2 { font-size: 20px; font-weight: 700; margin-top: 28px; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid var(--line); color: #1e293b; }
-    .markdown-body h3 { font-size: 16px; font-weight: 600; margin-top: 22px; margin-bottom: 10px; color: #334155; }
-    .markdown-body p { margin-top: 0; margin-bottom: 14px; text-align: justify; }
-    .markdown-body ul, .markdown-body ol { padding-left: 20px; margin-top: 0; margin-bottom: 14px; }
-    .markdown-body li { margin: 4px 0; }
-    
-    /* Code block container */
-    .markdown-body pre {
-      background-color: #f6f8fa;
-      border-radius: 8px;
-      padding: 14px 18px;
-      overflow: auto;
-      font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
-      font-size: 13.5px;
-      line-height: 1.45;
-      margin-top: 0;
-      margin-bottom: 16px;
-      border: 1px solid #e1e4e8;
-    }
-    .markdown-body code {
-      font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
-      background-color: rgba(27,31,35,0.05);
-      padding: 0.2em 0.4em;
-      border-radius: 4px;
-      font-size: 85%;
-    }
-    .markdown-body pre code {
-      background-color: transparent;
-      padding: 0;
-      font-size: 100%;
-    }
 
     @media (max-width: 860px){
       .page{ grid-template-columns: 1fr; }
       .sidebar{ padding:20px 18px; }
       .main{ padding:22px 18px; }
-      .project-container { padding: 24px 20px; }
     }
 
     @media print{
-      body{ background:#fff; padding-top: 0; }
-      .navbar { display: none; }
+      body{ background:#fff; }
       .page{ width:100%; margin:0; box-shadow:none; border-radius:0; }
-      .project-container { width:100%; margin:0; box-shadow:none; border-radius:0; padding:0; }
-      .view-content { display: block !important; page-break-before: always; }
       a{ color:inherit; text-decoration:none; }
     }
   </style>
 </head>
 <body>
+  <div class="page">
 
-  <!-- --- Modern Top Navbar --- -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a class="nav-brand" onclick="switchView('home')">Portfolio & Resume</a>
-      <ul class="nav-menu">
-        <li><a id="nav-home" class="nav-link active" onclick="switchView('home')">Home</a></li>
-        <li><a id="nav-maxai" class="nav-link" onclick="switchView('maxai')">Max AI Learning</a></li>
+    <aside class="sidebar">
+      <!-- Place headshot.jpg next to this HTML file -->
+      <img class="photo" src="headshot.jpg" alt="Headshot" />
+
+      <div class="side-title">Contact</div>
+      <ul class="side-list">
+        <li class="side-item">
+          <span class="ico">✉️</span>
+          <div class="small"><a href="mailto:panpanr@gmail.com">panpanr@gmail.com</a></div>
+        </li>
+        <li class="side-item">
+          <span class="ico">📞</span>
+          <div class="small"><a href="tel:+13016401486">(301) 640–1486</a></div>
+        </li>
+        <li class="side-item">
+          <span class="ico">📍</span>
+          <div class="small">Rockville/Potomac, MD 20854</div>
+        </li>
+        <li class="side-item">
+          <span class="ico">🔗</span>
+          <div class="small"><a href="https://panpanran.github.io/ran-pan-resume" target="_blank" rel="noopener">panpanran.github.io/ran-pan-resume</a></div>
+        </li>
       </ul>
-    </div>
-  </nav>
+      <div class="side-title">Education</div>
+      <ul class="side-list">
+        <li class="side-item">
+          <span class="ico">🎓</span>
+          <div class="small"><strong>University of Missouri</strong><br>Columbia, Missouri — Computer Engineering<br><span style="opacity:.9">MSc</span></div>
+        </li>
+        <li class="side-item">
+          <span class="ico">🎓</span>
+          <div class="small"><strong>University of Science &amp; Technology, Beijing</strong><br>Beijing, China — Control Engineering and Instrument<br><span style="opacity:.9">MSc</span></div>
+        </li>
+        <li class="side-item">
+          <span class="ico">🎓</span>
+          <div class="small"><strong>University of Science &amp; Technology, Beijing</strong><br>Beijing, China — Control Engineering and Instrument<br><span style="opacity:.9">BSc</span></div>
+        </li>
+      </ul>
+	  
+	  <div class="side-title">Applications</div>
+		  <div class="chips">
+			<a class="chip" href="https://ranonline.org/" target="_blank" rel="noopener" title="An intelligent document intelligence platform that extracts clinical data and securely transmits it to Fast EMR as FHIR-compliant bundles.">Fast OCR</a>
+			<a class="chip" href="https://fastemr-web1084360160.azurewebsites.net/" target="_blank" rel="noopener" title="An electronic medical record repository designed to ingest, validate, and store structured patient data received directly from the Fast OCR pipeline.">Fast EMR</a>
+			<a class="chip" href="https://maxaionline.org/" target="_blank" rel="noopener" title="AI learning platform: multi-grade diagnostics &amp; practice, Pinecone retrieval, multi-agent question generation with quality feedback (Ragas), and live generation progress.">Max AI Learning</a>
+			<a class="chip" href="https://pa.witsweb.org/Public/" target="_blank" rel="noopener" title="An interactive public-facing portal designed to provide community access and information query services.">WITS Public Portal</a>
+			<a class="chip" href="https://ltss.health.maryland.gov/ltssv2/Ltss.Web" target="_blank" rel="noopener" title="A dedicated portal system for Maryland Long Term Services and Supports to streamline and manage healthcare service workflows.">Maryland LTSS Portal</a>
+		</div>
 
-  <!-- ================= VIEW 1: HOME (RESUME) ================= -->
-  <div id="view-home" class="view-content active-view">
-    <div class="page">
-      <aside class="sidebar">
-        <img class="photo" src="headshot.jpg" alt="Headshot" />
+      <div class="side-title">Certifications</div>
+      <ul class="side-list">
+        <li class="side-item"><span class="ico">✅</span><div class="small">AWS Certified Solutions Architect - Professional</div></li>
+        <li class="side-item"><span class="ico">✅</span><div class="small">Microsoft Certified Solutions Developer (MCSD)</div></li>
+        <li class="side-item"><span class="ico">✅</span><div class="small">Certified Scrum Master (CSM)</div></li>
+        <li class="side-item"><span class="ico">✅</span><div class="small">Certified SAFe 5 Practitioner</div></li>
+        <li class="side-item"><span class="ico">✅</span><div class="small">Oracle Database SQL Certified Expert</div></li>
+      </ul>
 
-        <div class="side-title">Contact</div>
-        <ul class="side-list">
-          <li class="side-item">
-            <span class="ico">✉️</span>
-            <div class="small"><a href="mailto:panpanr@gmail.com">panpanr@gmail.com</a></div>
-          </li>
-          <li class="side-item">
-            <span class="ico">📞</span>
-            <div class="small"><a href="tel:+13016401486">(301) 640–1486</a></div>
-          </li>
-          <li class="side-item">
-            <span class="ico">📍</span>
-            <div class="small">Rockville/Potomac, MD 20854</div>
-          </li>
-          <li class="side-item">
-            <span class="ico">🔗</span>
-            <div class="small"><a href="https://panpanran.github.io/ran-pan-resume" target="_blank" rel="noopener">panpanran.github.io/ran-pan-resume</a></div>
-          </li>
-        </ul>
-
-        <div class="side-title">Education</div>
-        <ul class="side-list">
-          <li class="side-item">
-            <span class="ico">🎓</span>
-            <div class="small"><strong>University of Missouri</strong><br>Columbia, Missouri — Computer Engineering<br><span style="opacity:.9">MSc</span></div>
-          </li>
-          <li class="side-item">
-            <span class="ico">🎓</span>
-            <div class="small"><strong>University of Science &amp; Technology, Beijing</strong><br>Beijing, China — Control Engineering and Instrument<br><span style="opacity:.9">MSc</span></div>
-          </li>
-          <li class="side-item">
-            <span class="ico">🎓</span>
-            <div class="small"><strong>University of Science &amp; Technology, Beijing</strong><br>Beijing, China — Control Engineering and Instrument<br><span style="opacity:.9">BSc</span></div>
-          </li>
-        </ul>
-  	  
-        <div class="side-title">Applications</div>
-        <div class="chips">
-          <a class="chip" href="https://ranonline.org/" target="_blank" rel="noopener" title="An intelligent document intelligence platform that extracts clinical data and securely transmits it to Fast EMR as FHIR-compliant bundles.">Fast OCR</a>
-          <a class="chip" href="https://fastemr-web1084360160.azurewebsites.net/" target="_blank" rel="noopener" title="An electronic medical record repository designed to ingest, validate, and store structured patient data received directly from the Fast OCR pipeline.">Fast EMR</a>
-          <a class="chip" onclick="switchView('maxai')" title="AI learning platform: multi-grade diagnostics &amp; practice, Pinecone retrieval, multi-agent question generation with quality feedback (Ragas), and live generation progress.">Max AI Learning</a>
-          <a class="chip" href="https://pa.witsweb.org/Public/" target="_blank" rel="noopener" title="An interactive public-facing portal designed to provide community access and information query services.">WITS Public Portal</a>
-          <a class="chip" href="https://ltss.health.maryland.gov/ltssv2/Ltss.Web" target="_blank" rel="noopener" title="A dedicated portal system for Maryland Long Term Services and Supports to streamline and manage healthcare service workflows.">Maryland LTSS Portal</a>
-        </div>
-
-        <div class="side-title">Certifications</div>
-        <ul class="side-list">
-          <li class="side-item"><span class="ico">✅</span><div class="small">AWS Certified Solutions Architect - Professional</div></li>
-          <li class="side-item"><span class="ico">✅</span><div class="small">Microsoft Certified Solutions Developer (MCSD)</div></li>
-          <li class="side-item"><span class="ico">✅</span><div class="small">Certified Scrum Master (CSM)</div></li>
-          <li class="side-item"><span class="ico">✅</span><div class="small">Certified SAFe 5 Practitioner</div></li>
-          <li class="side-item"><span class="ico">✅</span><div class="small">Oracle Database SQL Certified Expert</div></li>
-        </ul>
-
-        <div class="side-title">Skills</div>
-        <div class="chips">
-          <span class="chip">C# / .NET</span>
-          <span class="chip">Python</span>
-          <span class="chip">Orleans</span>
-          <span class="chip">CMMN</span>
-          <span class="chip">Distributed Systems</span>
-          <span class="chip">SQL (PL/SQL, T-SQL)</span>
-          <span class="chip">Angular</span>
-          <span class="chip">REST APIs</span>
-          <span class="chip">ASP.NET Core</span>
-          <span class="chip">MediatR</span>
-          <span class="chip">FluentValidation</span>
-          <span class="chip">AWS</span>
-          <span class="chip">Azure</span>
-          <span class="chip">MongoDB</span>
-          <span class="chip">Redis</span>
-          <span class="chip">SQL Server</span>
-          <span class="chip">Oracle</span>
-          <span class="chip">TypeScript</span>
-          <span class="chip">PostgreSQL</span>
-          <span class="chip">Git</span>
-          <span class="chip">Azure DevOps</span>
-          <span class="chip">Microservices</span>
-          <span class="chip">SignalR</span>
-        </div>
-      </aside>
-
-      <main class="main">
-        <div class="name">Ran Pan</div>
-        <div class="role">Senior AI Engineer - Distributed Systems</div>
-        <div class="rule"></div>
-
-        <section class="section">
-          <h2>Profile</h2>
-          <div class="summary">
-            Senior AI engineer with deep experience delivering secure, data-heavy platforms across healthcare and enterprise domains.
-            Recently focused on distributed workflow architecture, CMMN-aligned case lifecycle design, Orleans grain-based orchestration, WebRTC/SignalR media streaming, and localized LLM chatbot integrations for complex case management systems.
-          </div>
-        </section>
-
-        <section class="section">
-          <h2>Work Experience</h2>
-
-          <div class="exp-item">
-            <div class="row">
-              <div>
-                <div class="org">Securiport, LLC</div>
-                <div class="where">Reston, VA</div>
-              </div>
-              <div class="when">2026.4 — Now</div>
-            </div>
-            <div class="titleline">Senior AI Engineer</div>
-            <ul class="bullets">
-              <li>Designed and implemented the next-generation Browser-Based Biometrics System (Border Control System Gen 2.0), migrating the legacy 1GB WinForms application to a modernized, lightweight B/S web architecture. Developed a 50MB Device Agent to handle hardware integration (Kojak fingerprint scanners, PR22/Osmond passport readers, and iBar face/iris devices), utilizing SignalR for real-time preview frame delivery and supporting automated updates via LAN shares. </li>
-              <li>Designed and implemented the Internal Border Control (IBC) case management system with Orleans grain architecture for workflow execution, defining grain boundaries, lifecycle responsibilities, and distributed orchestration patterns for CMMN-style human-task and case-management scenarios. Built a localized intelligent Q&A chatbot utilizing private Gemma models via Ollama and LiteLLM, establishing end-to-end observability and monitoring hooks with Langwatch. Built an automated data simulation subsystem using Bogus to streamline large-scale dummy data generation for testing.</li>
-              <li class="muted">Skills: C#, .NET, ASP.NET Core, Orleans, CMMN, MediatR, SignalR, WebRTC, Github copilot, MCP, AWS, Redis, MongoDB, SQL Server, MinIO, Azure DevOps, Docker</li>
-            </ul>
-          </div>
-
-          <div class="exp-item">
-            <div class="row">
-              <div>
-                <div class="org">FEI Systems</div>
-                <div class="where">Columbia, MD</div>
-              </div>
-              <div class="when">2019.8 — 2026.4</div>
-            </div>
-            <div class="titleline">Full Stack Software Engineer</div>
-            <ul class="bullets">
-              <li>Led an internal OCR + document intelligence platform for LTSS Plan of Service (POS) workflows, reducing manual abstraction time by 91% and improving first-pass data quality by 5%.</li>
-              <li>Built an LLM-orchestrated extraction and validation pipeline using FastAPI + LangGraph, with async job execution via Redis/ARQ and persistence in MongoDB for scalable, non-blocking document processing.</li>
-              <li>Delivered interoperability export by generating FHIR R4 transaction Bundles and optional push to R4-compliant endpoints; surfaced EHR links in the UI to shorten downstream triage.</li>
-              <li>Architected an automated AI data pipeline to ingest healthcare JSON data into Snowflake Internal Stages; utilized Snowpipe and Streams to trigger asynchronous Cortex AI tasks for Llama3-70b based PII redaction and e5-base-v2 vector embeddings.</li>
-              <li class="muted">Skills: AWS, Azure DevOps, C#, Python, NHibernate, Dapper, Angular, SQL Server, ElasticSearch, Azure Cosmos</li>
-            </ul>
-          </div>
-
-          <div class="exp-item">
-            <div class="row">
-              <div>
-                <div class="org">Essential Software Inc / National Cancer Institute</div>
-                <div class="where">Rockville, MD</div>
-              </div>
-              <div class="when">2018.4 — 2019.8</div>
-            </div>
-            <div class="titleline">Senior Software Engineer</div>
-            <ul class="bullets">
-              <li>Designed, developed and migrated CTRO Reporting System; delivered scalable REST APIs, batch automation, and data visualization dashboards.</li>
-              <li>Led the modernization and migration of the Pesticide Risk Assessment Application from legacy VBA to a cloud-native architecture.</li>
-              <li>Upgraded core systems to .NET Core 2.2 and Angular 7; migrated databases to Azure SQL and optimized media storage using Azure Blob Storage.</li>
-              <li class="muted">Skills: C#, .NET Core, WebAPI, Angular 7, Azure SQL, Blob Storage, VBA</li>
-            </ul>
-          </div>
-
-          <div class="exp-item">
-            <div class="row">
-              <div>
-                <div class="org">comScore</div>
-                <div class="where">Reston, VA</div>
-              </div>
-              <div class="when">2017.10 — 2018.4</div>
-            </div>
-            <div class="titleline">Senior Mobile Engineer</div>
-            <ul class="bullets">
-              <li>Developed MobileExpression and UltraWallpaper; implemented registration email module; worked with Java/Kotlin, Firebase, OpenGL.</li>
-              <li class="muted">Skills: ASP.NET, SQL Server, Java, Kotlin, XML/XSLT, Firebase, Realm</li>
-            </ul>
-          </div>
-
-          <div class="exp-item">
-            <div class="row">
-              <div>
-                <div class="org">Asclepius Solutions / National Cancer Institute</div>
-                <div class="where">Bethesda, MD</div>
-              </div>
-              <div class="when">2015.11 — 2017.10</div>
-            </div>
-            <div class="titleline">Database / Software Developer</div>
-            <ul class="bullets">
-              <li>Designed and maintained NCI clinical databases; authored PL/SQL stored procedures, triggers; scheduled ETL jobs; schema design from SME Excel sources into Oracle Clinical.</li>
-              <li class="muted">Skills: Oracle Clinical, J-Review, PL/SQL, Angular 2+, C#, WPF, WCF</li>
-            </ul>
-          </div>
-
-          <div class="exp-item">
-            <div class="row">
-              <div>
-                <div class="org">H2OClinical</div>
-                <div class="where">Baltimore, MD</div>
-              </div>
-              <div class="when">2014.7 — 2015.11</div>
-            </div>
-            <div class="titleline">Database Administrator</div>
-            <ul class="bullets">
-              <li>Built clinical data warehouses; developed PL/SQL procedures and C# extensions; wrote SAS for edit-check listings.</li>
-              <li class="muted">Skills: SAS, Oracle Clinical (PL/SQL), Medrio, Medidata (C#)</li>
-            </ul>
-          </div>
-
-          <div class="exp-item">
-            <div class="row">
-              <div>
-                <div class="org">Application Development Network — University of Missouri</div>
-                <div class="where">Columbia, MO</div>
-              </div>
-              <div class="when">2013.3 — 2014.7</div>
-            </div>
-            <div class="titleline">Software Developer</div>
-            <ul class="bullets">
-              <li>Developed course/appointment web apps with ASP.NET, C#, SQL Server; dynamic user controls + master pages.</li>
-              <li class="muted">Skills: ASP.NET, C#, SQL Server</li>
-            </ul>
-          </div>
-        </section>
-      </main>
-    </div>
-  </div>
-
-  <!-- ================= VIEW 2: MAX AI LEARNING ================= -->
-  <div id="view-maxai" class="view-content">
-    <div class="project-container markdown-body">
-      
-      <!-- Preview Image Section — OG-style card for https://maxaionline.org/ -->
-      <div class="preview-box">
-        <a href="https://maxaionline.org/" target="_blank" rel="noopener" title="Open Max AI Learning">
-          <img class="preview-img" src="maxai-preview.jpg" alt="Max AI Learning — Personalized practice & diagnostics" width="1200" height="630" onerror="this.style.display='none'; document.getElementById('preview-err').style.display='flex';" />
-        </a>
-        <div id="preview-err" class="preview-placeholder" style="display:none;">
-          <span style="font-size: 28px;">🖼️</span>
-          <span><strong>Max AI Learning Preview</strong></span>
-          <span style="font-size: 12px; opacity:0.75;">(Place <code>maxai-preview.jpg</code> next to this HTML file)</span>
-        </div>
+      <div class="side-title">Skills</div>
+      <div class="chips"><span class="chip">C# / .NET</span>
+        <span class="chip">Python</span>
+        <span class="chip">Orleans</span>
+        <span class="chip">CMMN</span>
+        <span class="chip">Distributed Systems</span>
+        <span class="chip">SQL (PL/SQL, T-SQL)</span>
+        <span class="chip">Angular</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">ASP.NET Core</span>
+        <span class="chip">MediatR</span>
+        <span class="chip">FluentValidation</span>
+        <span class="chip">AWS</span>
+        <span class="chip">Azure</span>
+        <span class="chip">MongoDB</span>
+        <span class="chip">Redis</span>
+        <span class="chip">SQL Server</span>
+        <span class="chip">Oracle</span>
+        <span class="chip">TypeScript</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">Git</span>
+        <span class="chip">Azure DevOps</span>
+        <span class="chip">Microservices</span>
+        <span class="chip">SignalR</span>
       </div>
+	  
+    </aside>
 
-      <!-- Rendered Markdown Content -->
-      <h1>Max AI Learning</h1>
-      <p>Max AI Learning is an intelligent learning platform supporting multi-subject, multi-grade, personalized practice and diagnostics. Live site: <a href="https://maxaionline.org/" target="_blank" rel="noopener">https://maxaionline.org/</a></p>
+    <main class="main">
+      <div class="name">Ran Pan</div>
+      <div class="role">Senior AI Engineer - Distributed Systems</div>
+      <div class="rule"></div>
 
-      <h2>Features</h2>
-      <ul>
-        <li>React frontend (Vite) + Express backend (JWT, OpenAI)</li>
-        <li>Chinese/English switching (i18next)</li>
-        <li>Grade/subject selection with saved preferences</li>
-        <li>Pinecone vector retrieval, mistake notebook, targeted practice</li>
-        <li>Multi-agent question generation (plan → generate → dedupe → evaluate/refine)</li>
-        <li>Live generation progress bar for diagnostic and knowledge-point practice</li>
-        <li>Quality feedback loop (Ragas/judge scores → feedback store + prompt patches)</li>
-        <li>Build-time version badge (<code>vYYYY.MMDD.HHmm</code>) so each Render deploy is visible in the UI</li>
-        <li>SPA deep links (<code>/app</code>, <code>/scores</code>, …) with session redirect back to login when logged out</li>
-      </ul>
+      <section class="section">
+        <h2>Profile</h2>
+			<div class="summary">
+			  Senior AI engineer with deep experience delivering secure, data-heavy platforms across healthcare and enterprise domains.
+			  Recently focused on distributed workflow architecture, CMMN-aligned case lifecycle design, Orleans grain-based orchestration, WebRTC/SignalR media streaming, and localized LLM chatbot integrations for complex case management systems.
+			</div>
+      </section>
 
-      <h2>Quick Start (Local)</h2>
-      <h3>1. Install dependencies</h3>
-      <pre><code># Backend
-cd backend
-npm install
+      <section class="section">
+        <h2>Work Experience</h2>
 
-# Frontend
-cd ../frontend
-npm install</code></pre>
-
-      <h3>2. Configure environment variables</h3>
-      <p>Copy <code>.env.example</code> to <code>.env</code> and fill in:</p>
-      <pre><code>JWT_SECRET=your_jwt_secret
-OPENAI_API_KEY=(optional, for OpenAI 4.1)</code></pre>
-
-      <h3>3. Start services</h3>
-      <pre><code># Backend
-cd backend
-npm run dev
-
-# Frontend
-cd ../frontend
-npm run dev</code></pre>
-      <p>Access frontend: <code>http://localhost:5173</code></p>
-
-      <h2>Deployment</h2>
-      <p>Production on <strong>Render.com</strong> (frontend static + backend web service), Postgres on <strong>Neon</strong> (<code>neondb</code>), vectors on <strong>Pinecone</strong> index <code>ai-learning</code>. Pushing to GitHub <code>master</code> auto-deploys. See the project README for service IDs and publish steps.</p>
-
-      <h2>Project Structure</h2>
-      <ul>
-        <li><code>backend/</code> Node.js + Express API</li>
-        <li><code>frontend/</code> React + Vite</li>
-        <li><code>agents/</code> Python multi-agent question generation service (FastAPI + LangGraph)</li>
-        <li><code>ragas/</code> Python RAG evaluation scripts (Ragas)</li>
-      </ul>
-
-      <h2>Question Generation Algorithm</h2>
-      <p>The diagnostic question generation runs as a multi-agent pipeline in <code>agents/app</code> (entry point <code>orchestrators/diagnostic_run.py</code>): plan → generate → dedupe → evaluate/refine → persist.</p>
-
-      <h3>Steps</h3>
-      <ol>
-        <li>
-          <strong>Receive request</strong> (<code>DiagnosticRunRequest</code>)
-          <ul>
-            <li>Inputs: language <code>lang</code>, question count <code>num_questions</code>, <code>student_profile</code>, knowledge point list `kp_list`, grade/difficulty <code>grade_guidance</code>, <code>retrieval_snippets</code>, <code>feedback_context</code>, and more.</li>
-            <li>The question count is clamped to <code>1–20</code> (<code>num = max(1, min(20, num_questions))</code>).</li>
+        <div class="exp-item">
+          <div class="row">
+            <div>
+              <div class="org">Securiport, LLC</div>
+              <div class="where">Reston, VA</div>
+            </div>
+            <div class="when">2026.4 — Now</div>
+          </div>
+          <div class="titleline">Senior AI Engineer</div>
+          <ul class="bullets">
+            <li>Designed and implemented the next-generation Browser-Based Biometrics System (Border Control System Gen 2.0), migrating the legacy 1GB WinForms application to a modernized, lightweight B/S web architecture. Developed a 50MB Device Agent to handle hardware integration (Kojak fingerprint scanners, PR22/Osmond passport readers, and iBar face/iris devices), utilizing SignalR for real-time preview frame delivery and supporting automated updates via LAN shares. </li>
+			<li>Designed and implemented the Internal Border Control (IBC) case management system with Orleans grain architecture for workflow execution, defining grain boundaries, lifecycle responsibilities, and distributed orchestration patterns for CMMN-style human-task and case-management scenarios. Built a localized intelligent Q&A chatbot utilizing private Gemma models via Ollama and LiteLLM, establishing end-to-end observability and monitoring hooks with Langwatch. Built an automated data simulation subsystem using Bogus to streamline large-scale dummy data generation for testing.</li>
+			<li class="muted">Skills: C#, .NET, ASP.NET Core, Orleans, CMMN, MediatR, SignalR, WebRTC, Github copilot, MCP, AWS, Redis, MongoDB, SQL Server, MinIO, Azure DevOps, Docker</li>
           </ul>
-        </li>
-        <li>
-          <strong>Knowledge-point planning</strong> (<code>agents/planner.py</code> → <code>build_knowledge_point_ids_plan</code>)
-          <ul>
-            <li>Optional: when <code>use_db_planner</code> is enabled, per-KP historical usage counts <code>kp_usage_counts</code> are read from the database.</li>
-            <li>Assigns a <code>knowledge_point_id</code> to each question slot: KPs are ordered by ascending usage count plus a random tiebreaker, prioritizing less-used knowledge points; when there aren't enough KPs, slots are filled by randomly sampling from the top third of the pool.</li>
-            <li>Produces two plans: the final <code>plan</code> (length <code>num</code>) and an over-generation <code>gen_plan</code> (length <code>num + 5</code>).</li>
-          </ul>
-        </li>
-        <li>
-          <strong>LLM generation</strong> (<code>agents/generator.py</code> → <code>generate_mcq_batch</code>)
-          <ul>
-            <li>Uses <code>prompts/diagnostic.py</code> to build the system and user prompts, injecting the student profile, knowledge points, assignment plan, retrieval snippets, metadata to avoid, and past feedback.</li>
-            <li>Calls OpenAI (default <code>gpt-4.1-mini</code>, <code>temperature=0.2</code>, JSON output mode), requiring strict JSON <code>{lesson, questions}</code>.</li>
-            <li>Over-generates <code>num + 5</code> questions to improve the yield of usable items.</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Parse & normalize</strong> (<code>generator.py</code> → <code>_parse_json</code>, <code>_normalize_question</code>)
-          <ul>
-            <li>Parses the model's JSON output (falls back to extracting the outermost braces on error).</li>
-            <li>Normalizes each question's fields (<code>_coerce_question_shape</code>) and validates it: type must be <code>mcq</code>; exactly 4 options in each language; <code>answer_cn</code>/<code>answer_en</code> must appear in the corresponding options; otherwise the item is dropped.</li>
-            <li>Backfills <code>knowledge_point_id</code> from the plan (falling back to <code>fallback_kp_id</code> if it is not in the allowed set).</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Deduplication</strong> (<code>workers/dedupe.py</code> → <code>dedupe_questions</code>)
-          <ul>
-            <li>Computes a <code>content_options_hash</code> per question: a SHA-256 over the normalized English content and options.</li>
-            <li>Removes duplicates within the batch first, then compares against existing database hashes <code>db_hashes</code> (queried when <code>check_db_hashes</code> is enabled).</li>
-            <li>Keeps the first <code>num</code> accepted questions; if too few are accepted, falls back to the raw questions to fill the gap.</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Quality evaluation & refinement</strong> (<code>orchestrators/diagnostic.py</code>, LangGraph: <code>evaluate → critic → (refine loop)</code>)
-          <ul>
-            <li><strong>evaluate</strong> (<code>evaluators/quality.py</code>):
-              <ul>
-                <li>Rule checks (<code>rules.py</code>): valid schema, answer present in options, single correct answer, KP assigned, matches the plan, metadata present, bilingual fields complete.</li>
-                <li>LLM judge (<code>judge.py</code>): <code>kp_alignment</code> (fit to the knowledge point), <code>explanation_support</code> (whether the explanation supports the answer), <code>distractor_quality</code>.</li>
-              </ul>
-            </li>
-            <li><strong>critic</strong> (<code>agents/critic.py</code>): when scores fall below the thresholds in <code>config.py</code> (e.g. <code>kp_alignment < 0.7</code>, <code>distractor_quality < 0.6</code>) or rules fail, produces a critique and rewrite instructions.</li>
-            <li><strong>route</strong>: if refinement is enabled, <code>max_refine_rounds</code> (default 2) has not been exceeded, and questions still need fixing, go to refine; otherwise finish.</li>
-            <li><strong>refine</strong> (<code>agents/refiner.py</code>): failing questions are rewritten one by one by the LLM according to the critique, then sent back to evaluate for re-scoring.</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Persist (optional)</strong> (<code>workers/persist.py</code> → <code>persist_question</code>)
-          <ul>
-            <li>When <code>persist</code> is set and <code>grade_id</code>/<code>subject_id</code> are provided, each question's hash is recomputed and it is written to the database, with the generated <code>id</code> backfilled.</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Return response</strong> (<code>DiagnosticRunResponse</code>)
-          <ul>
-            <li>Includes <code>run_id</code>, status, the KP plan and rationale, <code>lesson</code>, the final <code>questions</code>, batch quality metrics and per-question scores, refine rounds, dedupe rejection count, and the list of persisted ids.</li>
-          </ul>
-        </li>
-      </ol>
+        </div>
 
-      <h2>Ragas Evaluation</h2>
-      <p>To evaluate RAG output quality (faithfulness, answer relevancy, etc.), use the <code>ragas/</code> directory:</p>
-      <pre><code>cd ragas
-python -m venv .venv
-# Windows PowerShell
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-$env:OPENAI_API_KEY="your_openai_key"
-python evaluate_ragas.py --input sample_dataset.jsonl</code></pre>
-      <p>See <code>ragas/README.md</code> for more details.</p>
+        <div class="exp-item">
+          <div class="row">
+            <div>
+              <div class="org">FEI Systems</div>
+              <div class="where">Columbia, MD</div>
+            </div>
+            <div class="when">2019.8 — 2026.4</div>
+          </div>
+          <div class="titleline">Full Stack Software Engineer</div>
+          <ul class="bullets">
+            <li>Led an internal OCR + document intelligence platform for LTSS Plan of Service (POS) workflows, reducing manual abstraction time by 91% and improving first-pass data quality by 5%.</li>
+			<li>Built an LLM-orchestrated extraction and validation pipeline using FastAPI + LangGraph, with async job execution via Redis/ARQ and persistence in MongoDB for scalable, non-blocking document processing.</li>
+            <li>Delivered interoperability export by generating FHIR R4 transaction Bundles and optional push to R4-compliant endpoints; surfaced EHR links in the UI to shorten downstream triage.</li>
+            <li>Architected an automated AI data pipeline to ingest healthcare JSON data into Snowflake Internal Stages; utilized Snowpipe and Streams to trigger asynchronous Cortex AI tasks for Llama3-70b based PII redaction and e5-base-v2 vector embeddings.</li>
+            <li class="muted">Skills: AWS, Azure DevOps, C#, Python, NHibernate, Dapper, Angular, SQL Server, ElasticSearch, Azure Cosmos</li>
+          </ul>
+        </div>
 
-      <h2>License</h2>
-      <p>MIT</p>
-    </div>
+        <div class="exp-item">
+          <div class="row">
+            <div>
+              <div class="org">Essential Software Inc / National Cancer Institute</div>
+              <div class="where">Rockville, MD</div>
+            </div>
+            <div class="when">2018.4 — 2019.8</div>
+          </div>
+          <div class="titleline">Senior Software Engineer</div>
+          <ul class="bullets">
+            <li>Designed, developed and migrated CTRO Reporting System; delivered scalable REST APIs, batch automation, and data visualization dashboards.</li>
+            <li>Led the modernization and migration of the Pesticide Risk Assessment Application from legacy VBA to a cloud-native architecture.</li>
+            <li>Upgraded core systems to .NET Core 2.2 and Angular 7; migrated databases to Azure SQL and optimized media storage using Azure Blob Storage.</li>
+            <li class="muted">Skills: C#, .NET Core, WebAPI, Angular 7, Azure SQL, Blob Storage, VBA</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="row">
+            <div>
+              <div class="org">comScore</div>
+              <div class="where">Reston, VA</div>
+            </div>
+            <div class="when">2017.10 — 2018.4</div>
+          </div>
+          <div class="titleline">Senior Mobile Engineer</div>
+          <ul class="bullets">
+            <li>Developed MobileExpression and UltraWallpaper; implemented registration email module; worked with Java/Kotlin, Firebase, OpenGL.</li>
+            <li class="muted">Skills: ASP.NET, SQL Server, Java, Kotlin, XML/XSLT, Firebase, Realm</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="row">
+            <div>
+              <div class="org">Asclepius Solutions / National Cancer Institute</div>
+              <div class="where">Bethesda, MD</div>
+            </div>
+            <div class="when">2015.11 — 2017.10</div>
+          </div>
+          <div class="titleline">Database / Software Developer</div>
+          <ul class="bullets">
+            <li>Designed and maintained NCI clinical databases; authored PL/SQL stored procedures, triggers; scheduled ETL jobs; schema design from SME Excel sources into Oracle Clinical.</li>
+            <li class="muted">Skills: Oracle Clinical, J-Review, PL/SQL, Angular 2+, C#, WPF, WCF</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="row">
+            <div>
+              <div class="org">H2OClinical</div>
+              <div class="where">Baltimore, MD</div>
+            </div>
+            <div class="when">2014.7 — 2015.11</div>
+          </div>
+          <div class="titleline">Database Administrator</div>
+          <ul class="bullets">
+            <li>Built clinical data warehouses; developed PL/SQL procedures and C# extensions; wrote SAS for edit-check listings.</li>
+            <li class="muted">Skills: SAS, Oracle Clinical (PL/SQL), Medrio, Medidata (C#)</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="row">
+            <div>
+              <div class="org">Application Development Network — University of Missouri</div>
+              <div class="where">Columbia, MO</div>
+            </div>
+            <div class="when">2013.3 — 2014.7</div>
+          </div>
+          <div class="titleline">Software Developer</div>
+          <ul class="bullets">
+            <li>Developed course/appointment web apps with ASP.NET, C#, SQL Server; dynamic user controls + master pages.</li>
+            <li class="muted">Skills: ASP.NET, C#, SQL Server</li>
+          </ul>
+        </div>
+
+      </section>
+
+    </main>
+
   </div>
-
-  <!-- --- Dynamic Routing Script --- -->
-  <script>
-    function switchView(viewName) {
-      // Hide all views
-      document.querySelectorAll('.view-content').forEach(view => {
-        view.classList.remove('active-view');
-      });
-      // Remove active class from all nav links
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-      });
-
-      // Show requested view & update nav link
-      if (viewName === 'home') {
-        document.getElementById('view-home').classList.add('active-view');
-        document.getElementById('nav-home').classList.add('active');
-        window.scrollTo(0, 0);
-      } else if (viewName === 'maxai') {
-        document.getElementById('view-maxai').classList.add('active-view');
-        document.getElementById('nav-maxai').classList.add('active');
-        window.scrollTo(0, 0);
-      }
-    }
-  </script>
 </body>
 </html>
+
+```
